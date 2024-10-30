@@ -8,7 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 
-public class trainerRoleWindow extends JFrame{
+public class TrainerRoleWindow extends JFrame{
     private JButton addMemberButton;
     private JButton viewRegistrationsButton;
     private JButton viewMembersButton;
@@ -20,7 +20,7 @@ public class trainerRoleWindow extends JFrame{
     private JPanel mainPanel;
 
 
-    public trainerRoleWindow() throws IOException {
+    public TrainerRoleWindow() throws IOException {
         TrainerRole trainerRole = new TrainerRole();
         AdminRole adminRole = new AdminRole();// TODO: take admin role as an argument instead of initializing
         setTitle("Trainer Role");
@@ -94,6 +94,6 @@ public class trainerRoleWindow extends JFrame{
         });
     }
     public static void main(String[] args) throws IOException {
-        trainerRoleWindow trainerRoleWindow= new trainerRoleWindow();
+        TrainerRoleWindow trainerRoleWindow= new TrainerRoleWindow();
     }
 }
