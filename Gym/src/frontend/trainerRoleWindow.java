@@ -1,5 +1,6 @@
 package Gym.src.frontend;
 
+import Gym.src.backend.system.AdminRole;
 import Gym.src.backend.trainer.TrainerRole;
 
 import javax.swing.*;
@@ -21,6 +22,7 @@ public class trainerRoleWindow extends JFrame{
 
     public trainerRoleWindow() throws IOException {
         TrainerRole trainerRole = new TrainerRole();
+        AdminRole adminRole = new AdminRole();// TODO: take admin role as an argument instead of initializing
         setTitle("Trainer Role");
         setContentPane(mainPanel);
         setVisible(true);
@@ -42,10 +44,54 @@ public class trainerRoleWindow extends JFrame{
         addClassButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+            AddClass addClass = new AddClass(trainerRole,adminRole);
+            addClass.setVisible(true);
             }
         });
 
+        viewClassesButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ViewClasses viewClasses = new ViewClasses(trainerRole);
+                viewClasses.setVisible(true);
+            }
+        });
+        registerMemberForClassButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                RegisterMember registerMember = new RegisterMember(trainerRole);
+                registerMember.setVisible(true);
+            }
+        });
+        cancelRegistrationButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                CancelRegistration cancelRegistration = new CancelRegistration(trainerRole);
+                cancelRegistration.setVisible(true);
+            }
+        });
+        viewRegistrationsButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ViewRegistrations viewRegistrations = new ViewRegistrations(trainerRole);
+                viewRegistrations.setVisible(true);
+
+            }
+        });
+        logoutButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    trainerRole.logout();
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+                finally {
+                    dispose();
+                }
+
+            }
+        });
     }
     public static void main(String[] args) throws IOException {
         trainerRoleWindow trainerRoleWindow= new trainerRoleWindow();
