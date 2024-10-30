@@ -1,4 +1,4 @@
 package Gym.src.frontend;
 
-public class addClass {
+public class AddClass {
 }
