@@ -1,6 +1,6 @@
-package Gym.src.trainer;
+package Gym.src.backend.trainer;
 
-import Gym.src.general.Record;
+import Gym.src.backend.general.Record;
 
 public class Class implements Record {
     private String classId;

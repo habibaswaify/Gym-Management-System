@@ -1,4 +1,4 @@
-package Gym.src.general;
+package Gym.src.backend.general;
 
 import java.util.List;
 

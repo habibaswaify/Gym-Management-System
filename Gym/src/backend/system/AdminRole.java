@@ -1,6 +1,7 @@
-package Gym.src.system;
+package Gym.src.backend.system;
 
-import Gym.src.general.Record;
+import Gym.src.backend.general.Record;
+import Gym.src.constants.FileNames;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -10,7 +11,7 @@ public class AdminRole {
 
     // Constructor for class using trainerDatabase
     public AdminRole() throws IOException {
-        this.trainerDatabase = new TrainerDatabase("Trainers.txt");
+        this.trainerDatabase = new TrainerDatabase(FileNames.TRAINER_FILENAME);
         this.trainerDatabase.readFromFile();
     }
 

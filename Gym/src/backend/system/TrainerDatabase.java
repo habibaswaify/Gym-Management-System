@@ -1,6 +1,6 @@
-package Gym.src.system;
+package Gym.src.backend.system;
 
-import Gym.src.general.Database;
+import Gym.src.backend.general.Database;
 
 public class TrainerDatabase extends Database {
 

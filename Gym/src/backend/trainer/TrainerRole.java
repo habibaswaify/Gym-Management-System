@@ -1,8 +1,8 @@
-package Gym.src.trainer;
+package Gym.src.backend.trainer;
 
 
-import Gym.src.general.Record;
-import Gym.src.system.Trainer;
+import Gym.src.backend.general.Record;
+import Gym.src.constants.FileNames;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -15,9 +15,9 @@ public class TrainerRole {
 
     // Constructor for class using trainerDatabase
     public TrainerRole() throws IOException {
-        this.memberDatabase = new MemberDatabase("Members.txt");
-        this.classDatabase = new ClassDatabase("Classes.txt");
-        this.registrationDatabase = new MemberClassRegistrationDatabase("Registration.txt");
+        this.memberDatabase = new MemberDatabase(FileNames.MEMBER_FILENAME);
+        this.classDatabase = new ClassDatabase(FileNames.CLASS_FILENAME);
+        this.registrationDatabase = new MemberClassRegistrationDatabase(FileNames.REGISTRATION_FILENAME);
         this.memberDatabase.readFromFile();
         this.classDatabase.readFromFile();
         this.registrationDatabase.readFromFile();
@@ -127,6 +127,7 @@ public class TrainerRole {
             //    Increment the available seats
             classDatabase.getRecord(classID).setAvailableSeats(availableSeats + 1);
             System.out.println("Registration cancelled.");
+            registrationDatabase.deleteRecord(key);
             return true;
 
         } else {

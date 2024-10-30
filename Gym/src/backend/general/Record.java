@@ -1,4 +1,4 @@
-package Gym.src.general;
+package Gym.src.backend.general;
 
 public interface Record {
     String LineRepresentation();
