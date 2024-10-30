@@ -133,7 +133,7 @@ public class AddMember extends JFrame {
                             "Member with ID  " + ID + " was added successfully!",
                             "Success",
                             JOptionPane.INFORMATION_MESSAGE);
-                    trainerRole.addMember(ID, name, membership, email, phoneNumber, status);
+                    trainerRole.addMember(ID, utilValidations.capitalize(name), utilValidations.capitalize(membership), email, phoneNumber, utilValidations.capitalize(status));
                     dispose();
 
                 }
