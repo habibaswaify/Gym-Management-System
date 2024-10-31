@@ -1,8 +1,7 @@
-package frontend;
+package src.frontend;
 
-import backend.trainer.Member;
-import backend.trainer.MemberClassRegistration;
-import backend.trainer.TrainerRole;
+import Gym.src.backend.trainer.MemberClassRegistration;
+import Gym.src.backend.trainer.TrainerRole;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -13,7 +12,6 @@ public class ViewRegistrations extends JFrame{
     public ViewRegistrations(TrainerRole trainerRole){
         setTitle("View Registrations");
         setContentPane(mainPanel);
-        setSize(800, 500);
         if(trainerRole.getListOfRegistrations().isEmpty()){
             JOptionPane.showMessageDialog(ViewRegistrations.this,
                     "Error: No registrations to show.",
@@ -22,7 +20,8 @@ public class ViewRegistrations extends JFrame{
             dispose();
         }
         String[] columnNames = {"Member ID","Class ID","Registration Date"};
-        DefaultTableModel model = new DefaultTableModel(columnNames,0);
+        DefaultTableModel model = new DefaultTableModel(0, 3);
+        model.setColumnIdentifiers(columnNames);
         for(MemberClassRegistration registration: trainerRole.getListOfRegistrations()){
             String[] rowData = registration.LineRepresentation().split(",");
             model.addRow(rowData);

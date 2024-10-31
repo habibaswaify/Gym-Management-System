@@ -1,7 +1,7 @@
-package frontend;
+package src.frontend;
 
-import backend.trainer.Class;
-import backend.trainer.TrainerRole;
+import Gym.src.backend.trainer.Class;
+import Gym.src.backend.trainer.TrainerRole;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -12,7 +12,6 @@ public class ViewClasses extends JFrame{
     public ViewClasses(TrainerRole trainerRole){
         setTitle("View Classes");
         setContentPane(mainPanel);
-        setSize(800, 500);
         if(trainerRole.getListOfClasses().isEmpty()){
             JOptionPane.showMessageDialog(ViewClasses.this,
                     "Error: No classes to show.",
@@ -21,7 +20,8 @@ public class ViewClasses extends JFrame{
             dispose();
         }
         String[] columnNames = {"Class ID","Class Name","Trainer ID","Duration", "Available Seats"};
-        DefaultTableModel model = new DefaultTableModel(columnNames,0);
+        DefaultTableModel model = new DefaultTableModel(0, 5);
+        model.setColumnIdentifiers(columnNames);
         for(Class classRecord: trainerRole.getListOfClasses()){
             String[] rowData = classRecord.LineRepresentation().split(",");
             model.addRow(rowData);
