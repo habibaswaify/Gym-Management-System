@@ -20,7 +20,8 @@ public class ViewClasses extends JFrame{
             dispose();
         }
         String[] columnNames = {"Class ID","Class Name","Trainer ID","Duration", "Available Seats"};
-        DefaultTableModel model = new DefaultTableModel(columnNames,0);
+        DefaultTableModel model = new DefaultTableModel(0, 5);
+        model.setColumnIdentifiers(columnNames);
         for(Class classRecord: trainerRole.getListOfClasses()){
             String[] rowData = classRecord.LineRepresentation().split(",");
             model.addRow(rowData);

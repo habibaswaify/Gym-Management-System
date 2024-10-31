@@ -21,7 +21,8 @@ public class ViewRegistrations extends JFrame{
             dispose();
         }
         String[] columnNames = {"Member ID","Class ID","Registration Date"};
-        DefaultTableModel model = new DefaultTableModel(columnNames,0);
+        DefaultTableModel model = new DefaultTableModel(0, 3);
+        model.setColumnIdentifiers(columnNames);
         for(MemberClassRegistration registration: trainerRole.getListOfRegistrations()){
             String[] rowData = registration.LineRepresentation().split(",");
             model.addRow(rowData);

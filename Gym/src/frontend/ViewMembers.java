@@ -20,7 +20,8 @@ public class ViewMembers extends JFrame{
             dispose();
         }
         String[] columnNames = {"ID","Name","Membership Type","Email", "Phone Number", "Status"};
-        DefaultTableModel model = new DefaultTableModel(columnNames,0);
+        DefaultTableModel model = new DefaultTableModel(0, 6);
+        model.setColumnIdentifiers(columnNames);
         for(Member member: trainerRole.getListOfMembers()){
             String[] rowData = member.LineRepresentation().split(",");
             model.addRow(rowData);
