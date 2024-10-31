@@ -8,7 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 
-public class TrainerRoleWindow extends JFrame{
+public class TrainerRoleWindow extends JFrame {
     private JButton addMemberButton;
     private JButton viewRegistrationsButton;
     private JButton viewMembersButton;
@@ -44,8 +44,8 @@ public class TrainerRoleWindow extends JFrame{
         addClassButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            AddClass addClass = new AddClass(trainerRole,adminRole);
-            addClass.setVisible(true);
+                AddClass addClass = new AddClass(trainerRole, adminRole);
+                addClass.setVisible(true);
             }
         });
 
@@ -78,6 +78,7 @@ public class TrainerRoleWindow extends JFrame{
 
             }
         });
+
         logoutButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -85,15 +86,15 @@ public class TrainerRoleWindow extends JFrame{
                     trainerRole.logout();
                 } catch (IOException ex) {
                     throw new RuntimeException(ex);
-                }
-                finally {
+                } finally {
                     dispose();
                 }
 
             }
         });
     }
+
     public static void main(String[] args) throws IOException {
-        TrainerRoleWindow trainerRoleWindow= new TrainerRoleWindow();
+        TrainerRoleWindow trainerRoleWindow = new TrainerRoleWindow();
     }
 }
