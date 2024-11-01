@@ -4,8 +4,11 @@
  */
 package com.mycompany.frontend;
 import com.mycompany.backend.general.Utils;
-import com.mycompany.backend.system.AdminRole;
 import com.mycompany.backend.trainer.TrainerRole;
+import com.mycompany.constants.FileNames;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.swing.*;
 
@@ -17,11 +20,10 @@ import javax.swing.*;
  */
 public class AddClass extends javax.swing.JFrame {
     private final TrainerRole trainerRole;
-    private final AdminRole adminRole;
+ 
     private final Utils utilValidations;
-    public AddClass(TrainerRole trainerRole, AdminRole adminRole) {
+    public AddClass(TrainerRole trainerRole) {
         this.trainerRole = trainerRole;
-        this.adminRole = adminRole;
         this.utilValidations = new Utils();
         initComponents();
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -65,7 +67,11 @@ public class AddClass extends javax.swing.JFrame {
         addButton.setText("Add");
         addButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addButtonActionPerformed(evt);
+                try {
+                    addButtonActionPerformed(evt);
+                } catch (IOException ex) {
+                    Logger.getLogger(AddClass.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
 
@@ -133,7 +139,7 @@ public class AddClass extends javax.swing.JFrame {
         pack();
     }// </editor-fold>                        
 
-    private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {                                          
+    private void addButtonActionPerformed(java.awt.event.ActionEvent evt) throws IOException {                                          
         // TODO add your handling code here:
         boolean validInput = true;
         boolean emptyDuration = true;
@@ -186,7 +192,7 @@ public class AddClass extends javax.swing.JFrame {
                             "Input Error",
                             JOptionPane.ERROR_MESSAGE);
                     validInput = false;
-                } else if (!utilValidations.recordExists(adminRole.getListOfTrainers(), trainerID)) {
+                } else if (!utilValidations.IDExists(trainerID,FileNames.TRAINER_FILENAME)) {
                     JOptionPane.showMessageDialog(AddClass.this,
                             "Error: Trainer with ID " + trainerID + " does not exist",
                             "Input Error",

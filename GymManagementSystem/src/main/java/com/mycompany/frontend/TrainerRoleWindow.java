@@ -4,11 +4,8 @@
  */
 package com.mycompany.frontend;
 
-import com.mycompany.backend.system.AdminRole;
 import com.mycompany.backend.trainer.TrainerRole;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -16,19 +13,18 @@ import java.util.logging.Logger;
  */
 public class TrainerRoleWindow extends javax.swing.JFrame {
     TrainerRole trainerRole;
-    AdminRole adminRole;
+    MainMenu mainMenu;
 
     /**
      * Creates new form TrainerRoleWindow
      * @throws java.io.IOException
      */
 //    public TrainerRoleWindow(TrainerRole trainerRole, AdminRole adminRole) throws IOException {
-    public TrainerRoleWindow() throws IOException {
+    public TrainerRoleWindow(MainMenu mainMenu) throws IOException {
         this.trainerRole = new TrainerRole();
-        this.adminRole = new AdminRole();
+        this.mainMenu = mainMenu;
         initComponents();
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Trainer Role Window");
     }
 
     /**
@@ -151,7 +147,7 @@ public class TrainerRoleWindow extends javax.swing.JFrame {
 
     private void addClassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addClassActionPerformed
         // TODO add your handling code here:
-        AddClass addClass = new AddClass(trainerRole,adminRole);
+        AddClass addClass = new AddClass(trainerRole);
         addClass.setVisible(true);
     }//GEN-LAST:event_addClassActionPerformed
 
@@ -164,6 +160,7 @@ public class TrainerRoleWindow extends javax.swing.JFrame {
         }
         finally{
             dispose();
+            mainMenu.setVisible(true);
         }
     }//GEN-LAST:event_logoutActionPerformed
 
@@ -204,42 +201,6 @@ public class TrainerRoleWindow extends javax.swing.JFrame {
         viewRegistrations.setVisible(true);
     }//GEN-LAST:event_viewRegistrationsActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TrainerRoleWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TrainerRoleWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TrainerRoleWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TrainerRoleWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> {
-            try {
-                new TrainerRoleWindow().setVisible(true);
-            } catch (IOException ex) {
-                Logger.getLogger(TrainerRoleWindow.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addClass;

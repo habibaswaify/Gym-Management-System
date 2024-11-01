@@ -1,4 +1,3 @@
-com\mycompany\frontend\MainMenu$4.class
 com\mycompany\frontend\AddClass.class
 com\mycompany\backend\trainer\MemberClassRegistrationDatabase.class
 com\mycompany\frontend\CancelRegistration$1.class
@@ -14,15 +13,12 @@ com\mycompany\backend\trainer\Member.class
 com\mycompany\frontend\AdminRoleWindow$1.class
 com\mycompany\frontend\RemoveTrainer.class
 com\mycompany\backend\trainer\TrainerRole.class
-com\mycompany\frontend\TrainerLogin$2.class
 com\mycompany\frontend\TrainerLogin.class
 com\mycompany\frontend\AddTrainer$2.class
 com\mycompany\frontend\TrainerRoleWindow$4.class
 com\mycompany\frontend\AdminLogin$2.class
 com\mycompany\frontend\AddTrainer$1.class
-com\mycompany\frontend\AdminRoleWindow$5.class
 com\mycompany\frontend\AddMember.class
-com\mycompany\frontend\RemoveTrainer$2.class
 com\mycompany\frontend\AdminRoleWindow$2.class
 com\mycompany\frontend\MainMenu$1.class
 com\mycompany\frontend\TrainerRoleWindow$3.class
@@ -48,7 +44,6 @@ com\mycompany\frontend\ViewTrainers.class
 com\mycompany\frontend\AdminLogin$1.class
 com\mycompany\frontend\MainMenu$2.class
 com\mycompany\frontend\AdminRoleWindow.class
-com\mycompany\frontend\MainMenu$3.class
 com\mycompany\frontend\ViewClasses.class
 com\mycompany\frontend\AddMember$1.class
 com\mycompany\frontend\TrainerRoleWindow$5.class

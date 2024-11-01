@@ -30,47 +30,10 @@ public class MainMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        adminRoleButton = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        trainerRoleButton = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        adminRoleButton.setBackground(new java.awt.Color(153, 255, 153));
-        adminRoleButton.setText("Admin Role");
-        adminRoleButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                adminRoleButtonActionPerformed(evt);
-            }
-        });
-        adminRoleButton.getAccessibleContext().setAccessibleDescription("");
-        adminRoleButton.getAccessibleContext().setAccessibleParent(jPanel1);
-
-        jLabel2.setText("Welcome to our gym management system");
-        jLabel2.getAccessibleContext().setAccessibleParent(jPanel1);
-
-        trainerRoleButton.setBackground(new java.awt.Color(153, 255, 153));
-        trainerRoleButton.setText("Trainer Role");
-        trainerRoleButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                trainerRoleButtonActionPerformed(evt);
-            }
-        });
-        trainerRoleButton.getAccessibleContext().setAccessibleParent(jPanel1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Main Menu");
@@ -135,30 +98,16 @@ public class MainMenu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void adminRoleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminRoleButtonActionPerformed
-        // TODO add your handling code here:
-        AdminLogin adminLogin = new AdminLogin();
-        adminLogin.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_adminRoleButtonActionPerformed
-
-    private void trainerRoleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_trainerRoleButtonActionPerformed
-        // TODO add your handling code here:
-        TrainerLogin trainerLogin = new TrainerLogin();
-        trainerLogin.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_trainerRoleButtonActionPerformed
-
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        TrainerLogin trainerLogin = new TrainerLogin();
+        TrainerLogin trainerLogin = new TrainerLogin(this);
         trainerLogin.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        AdminLogin adminLogin = new AdminLogin();
+        AdminLogin adminLogin = new AdminLogin(this);
         adminLogin.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -197,13 +146,9 @@ public class MainMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton adminRoleButton;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JButton trainerRoleButton;
     // End of variables declaration//GEN-END:variables
 }

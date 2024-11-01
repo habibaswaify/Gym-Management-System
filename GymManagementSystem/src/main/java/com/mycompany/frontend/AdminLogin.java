@@ -23,7 +23,9 @@ public class AdminLogin extends javax.swing.JFrame {
     /**
      * Creates new form AdminLogin
      */
-    public AdminLogin() {
+    MainMenu mainMenu;
+    public AdminLogin(MainMenu mainMenu) {
+        this.mainMenu = mainMenu;
         initComponents();
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Admin Login");
@@ -47,7 +49,7 @@ public class AdminLogin extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setBackground(new java.awt.Color(153, 255, 153));
-        jLabel1.setText("username");
+        jLabel1.setText("Username");
 
         jLabel2.setBackground(new java.awt.Color(153, 255, 153));
         jLabel2.setText("Password");
@@ -80,7 +82,7 @@ public class AdminLogin extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
                     .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(PasswordField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(usernameField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -128,7 +130,7 @@ public class AdminLogin extends javax.swing.JFrame {
             else{
                     AdminRoleWindow adminRoleWindow = null;
                 try {
-                    adminRoleWindow = new AdminRoleWindow();
+                    adminRoleWindow = new AdminRoleWindow(mainMenu);
                 } catch (IOException ex) {
                     Logger.getLogger(AdminLogin.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -168,9 +170,7 @@ public class AdminLogin extends javax.swing.JFrame {
 
         /* Create and display the form */
          
-        java.awt.EventQueue.invokeLater(() -> {
-            new AdminLogin().setVisible(true);
-        });
+  
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
