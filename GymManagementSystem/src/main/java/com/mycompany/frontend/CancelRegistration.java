@@ -24,6 +24,7 @@ public class CancelRegistration extends javax.swing.JFrame {
         this.utilValidations = new Utils();
         initComponents();
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Cancel Registration");
     }
 
     /**

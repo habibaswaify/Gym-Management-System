@@ -28,6 +28,7 @@ public class TrainerRoleWindow extends javax.swing.JFrame {
         this.adminRole = new AdminRole();
         initComponents();
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Trainer Role Window");
     }
 
     /**

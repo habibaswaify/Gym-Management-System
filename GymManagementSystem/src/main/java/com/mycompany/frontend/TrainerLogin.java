@@ -23,6 +23,7 @@ public class TrainerLogin extends javax.swing.JFrame {
     public TrainerLogin() {
         initComponents();
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Trainer Login");
     }
 
     /**

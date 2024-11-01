@@ -26,6 +26,7 @@ public class AdminLogin extends javax.swing.JFrame {
     public AdminLogin() {
         initComponents();
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Admin Login");
     }
 
     /**

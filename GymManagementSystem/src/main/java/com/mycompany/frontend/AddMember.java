@@ -26,6 +26,7 @@ public class AddMember extends javax.swing.JFrame {
         this.utilValidations = new Utils();
         initComponents();
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Add Member");
     }
 
     /**
