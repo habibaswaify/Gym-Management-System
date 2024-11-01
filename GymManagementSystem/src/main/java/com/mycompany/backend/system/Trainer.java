@@ -19,7 +19,7 @@ public class Trainer implements Record {
 
     @Override
     public String LineRepresentation() {
-        return this.trainerId+","+this.name+","+this.email+","+this.speciality+this.phoneNumber;
+        return this.trainerId+","+this.name+","+this.email+","+this.speciality+","+this.phoneNumber;
     }
 
     @Override

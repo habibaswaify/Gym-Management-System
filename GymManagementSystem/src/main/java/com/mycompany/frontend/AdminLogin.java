@@ -1,8 +1,9 @@
+package com.mycompany.frontend;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.mycompany.frontend;
 
 /**
  *
@@ -10,10 +11,11 @@ package com.mycompany.frontend;
  */
 
 import javax.swing.*;
-import java.io.IOException;
 import java.util.Objects;
 import com.mycompany.constants.LoginCredentials;
-import com.mycompany.backend.system.AdminRole;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 public class AdminLogin extends javax.swing.JFrame {
@@ -49,14 +51,12 @@ public class AdminLogin extends javax.swing.JFrame {
         jLabel2.setBackground(new java.awt.Color(153, 255, 153));
         jLabel2.setText("Password");
 
-        usernameField.setText("Enter username");
         usernameField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 usernameFieldActionPerformed(evt);
             }
         });
 
-        PasswordField.setText("Enter Password");
         PasswordField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PasswordFieldActionPerformed(evt);
@@ -125,15 +125,17 @@ public class AdminLogin extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(AdminLogin.this, "Wrong username or password");
             }
             else{
-                AdminRole adminRole = null;
+                    AdminRoleWindow adminRoleWindow = null;
                 try {
-                    adminRole = new AdminRole();
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
+                    adminRoleWindow = new AdminRoleWindow();
+                } catch (IOException ex) {
+                    Logger.getLogger(AdminLogin.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                adminRoleWindow adminRoleWindow = new adminRoleWindow(adminRole);
-                adminRoleWindow.setVisible(true);
-                dispose();        // TODO add your handling code here:
+                    adminRoleWindow.setVisible(true);
+                    dispose();
+                }
+            
+                        // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -165,10 +167,8 @@ public class AdminLogin extends javax.swing.JFrame {
 
         /* Create and display the form */
          
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new AdminLogin().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new AdminLogin().setVisible(true);
         });
     }
 

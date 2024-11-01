@@ -10,6 +10,7 @@ public class TrainerDatabase extends Database {
 
     @Override
     public Trainer createRecordFrom(String line) {
+        
         String[] trainerData = line.split(",");
         String trainerId = trainerData[0];
         String name = trainerData[1];

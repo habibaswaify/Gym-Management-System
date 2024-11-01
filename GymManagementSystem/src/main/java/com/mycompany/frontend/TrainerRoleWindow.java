@@ -231,13 +231,11 @@ public class TrainerRoleWindow extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    new TrainerRoleWindow().setVisible(true);
-                } catch (IOException ex) {
-                    Logger.getLogger(TrainerRoleWindow.class.getName()).log(Level.SEVERE, null, ex);
-                }
+        java.awt.EventQueue.invokeLater(() -> {
+            try {
+                new TrainerRoleWindow().setVisible(true);
+            } catch (IOException ex) {
+                Logger.getLogger(TrainerRoleWindow.class.getName()).log(Level.SEVERE, null, ex);
             }
         });
     }

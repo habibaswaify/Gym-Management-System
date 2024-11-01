@@ -4,6 +4,8 @@
 
 package com.mycompany.gymmanagementsystem;
 
+import com.mycompany.frontend.MainMenu;
+
 /**
  *
  * @author Mina
@@ -11,6 +13,7 @@ package com.mycompany.gymmanagementsystem;
 public class GymManagementSystem {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        MainMenu mainMenu = new MainMenu();
+        mainMenu.setVisible(true);
     }
 }
